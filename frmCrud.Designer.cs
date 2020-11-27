@@ -53,12 +53,15 @@
             this.txtRegistro = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.cliDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bnPrincipal = new System.Windows.Forms.BindingNavigator(this.components);
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.lblTipoCliente = new System.Windows.Forms.Label();
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
+            this.cliCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliTipoClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bnPrincipal)).BeginInit();
             this.bnPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -66,10 +69,10 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(713, 222);
+            this.btnGuardar.Location = new System.Drawing.Point(713, 269);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 19;
+            this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -177,10 +180,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(632, 222);
+            this.btnCancelar.Location = new System.Drawing.Point(632, 269);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -260,34 +263,6 @@
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 14;
             // 
-            // cliDireccion
-            // 
-            this.cliDireccion.DataPropertyName = "DIRECCION";
-            this.cliDireccion.HeaderText = "Dirección";
-            this.cliDireccion.Name = "cliDireccion";
-            this.cliDireccion.ReadOnly = true;
-            // 
-            // cliRegistro
-            // 
-            this.cliRegistro.DataPropertyName = "REGISTRO";
-            this.cliRegistro.HeaderText = "No. Registro";
-            this.cliRegistro.Name = "cliRegistro";
-            this.cliRegistro.ReadOnly = true;
-            // 
-            // cliRazonSocial
-            // 
-            this.cliRazonSocial.DataPropertyName = "RAZONSOCIAL";
-            this.cliRazonSocial.HeaderText = "Razón Social";
-            this.cliRazonSocial.Name = "cliRazonSocial";
-            this.cliRazonSocial.ReadOnly = true;
-            // 
-            // cliCodigo
-            // 
-            this.cliCodigo.DataPropertyName = "CODIGO";
-            this.cliCodigo.HeaderText = "Código";
-            this.cliCodigo.Name = "cliCodigo";
-            this.cliCodigo.ReadOnly = true;
-            // 
             // bnPrincipal
             // 
             this.bnPrincipal.AddNewItem = null;
@@ -327,20 +302,77 @@
             this.cliCodigo,
             this.cliRazonSocial,
             this.cliRegistro,
-            this.cliDireccion});
+            this.cliDireccion,
+            this.cliTipoClienteId});
             this.dgvDatos.Location = new System.Drawing.Point(12, 28);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.Size = new System.Drawing.Size(422, 300);
             this.dgvDatos.TabIndex = 9;
             // 
+            // lblTipoCliente
+            // 
+            this.lblTipoCliente.AutoSize = true;
+            this.lblTipoCliente.Location = new System.Drawing.Point(440, 204);
+            this.lblTipoCliente.Name = "lblTipoCliente";
+            this.lblTipoCliente.Size = new System.Drawing.Size(28, 13);
+            this.lblTipoCliente.TabIndex = 10;
+            this.lblTipoCliente.Text = "Tipo";
+            // 
+            // cbxTipo
+            // 
+            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Location = new System.Drawing.Point(440, 220);
+            this.cbxTipo.Name = "cbxTipo";
+            this.cbxTipo.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipo.TabIndex = 18;
+            // 
+            // cliCodigo
+            // 
+            this.cliCodigo.DataPropertyName = "CODIGO";
+            this.cliCodigo.HeaderText = "Código";
+            this.cliCodigo.Name = "cliCodigo";
+            this.cliCodigo.ReadOnly = true;
+            // 
+            // cliRazonSocial
+            // 
+            this.cliRazonSocial.DataPropertyName = "RAZONSOCIAL";
+            this.cliRazonSocial.HeaderText = "Razón Social";
+            this.cliRazonSocial.Name = "cliRazonSocial";
+            this.cliRazonSocial.ReadOnly = true;
+            // 
+            // cliRegistro
+            // 
+            this.cliRegistro.DataPropertyName = "REGISTRO";
+            this.cliRegistro.HeaderText = "No. Registro";
+            this.cliRegistro.Name = "cliRegistro";
+            this.cliRegistro.ReadOnly = true;
+            // 
+            // cliDireccion
+            // 
+            this.cliDireccion.DataPropertyName = "DIRECCION";
+            this.cliDireccion.HeaderText = "Dirección";
+            this.cliDireccion.Name = "cliDireccion";
+            this.cliDireccion.ReadOnly = true;
+            // 
+            // cliTipoClienteId
+            // 
+            this.cliTipoClienteId.DataPropertyName = "TIPOCLIENTEID";
+            this.cliTipoClienteId.HeaderText = "TipoClienteID";
+            this.cliTipoClienteId.Name = "cliTipoClienteId";
+            this.cliTipoClienteId.ReadOnly = true;
+            this.cliTipoClienteId.Visible = false;
+            // 
             // frmCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 339);
+            this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.lblTipoCliente);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblRegistro);
             this.Controls.Add(this.lblRazonSocial);
@@ -389,12 +421,15 @@
         private System.Windows.Forms.TextBox txtRegistro;
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliDireccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliRegistro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliRazonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliCodigo;
         private System.Windows.Forms.BindingNavigator bnPrincipal;
         private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.Label lblTipoCliente;
+        private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliRazonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliDireccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliTipoClienteId;
     }
 }
 

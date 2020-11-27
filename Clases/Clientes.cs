@@ -104,5 +104,13 @@ namespace SQLServerCSharp.Clases
         }
 
         //-----------------------------------------------------------------------------------------
+
+        // Llenar combo con tipos de cliente
+        public void LlenarComboTiposCliente(ComboBox cbx)
+        {
+            conexionBD.llenarCombo(cbx, "TIPOSCLIENTE", "TIPOCLIENTEID", "NOMBRE", "NOMBRE ASC");
+        }
+
+        //-----------------------------------------------------------------------------------------
     }
 }

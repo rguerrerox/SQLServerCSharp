@@ -56,6 +56,8 @@ namespace SQLServerCSharp
                 objClientes = new Clases.Clientes(objBaseSQLServer);
                 objBindingSource = new BindingSource();
 
+                objClientes.LlenarComboTiposCliente(cbxTipo);
+
                 obtenerDatos();
                 asignarOrigenDatosEdicion();
             }
@@ -84,6 +86,7 @@ namespace SQLServerCSharp
             txtRazonSocial.DataBindings.Add("Text", objBindingSource, "RAZONSOCIAL");
             txtRegistro.DataBindings.Add("Text", objBindingSource, "REGISTRO");
             txtDireccion.DataBindings.Add("Text", objBindingSource, "DIRECCION");
+            cbxTipo.DataBindings.Add("SelectedValue", objBindingSource, "TIPOCLIENTEID");
         }
 
         //-----------------------------------------------------------------------------------------
@@ -133,6 +136,7 @@ namespace SQLServerCSharp
             txtRazonSocial.ReadOnly = !estado;
             txtRegistro.ReadOnly = !estado;
             txtDireccion.ReadOnly = !estado;
+            cbxTipo.Enabled = estado;
 
             btnGuardar.Enabled = estado;
             btnCancelar.Enabled = estado;

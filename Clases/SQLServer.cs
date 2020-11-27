@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SQLServerCSharp.Clases
 {
@@ -53,6 +55,20 @@ namespace SQLServerCSharp.Clases
                 _hayError = true;
                 _mensajeError = e.Message;
             }
+        }
+
+        //-----------------------------------------------------------------------------------------
+
+        // Llenar combobox desde tabla (valor, texto a mostrar)
+        public void llenarCombo(ComboBox cbx, string tabla, string campoValor, string campoTexto, string orden)
+        {
+            SqlDataAdapter da = new SqlDataAdapter($"SELECT {campoValor}, {campoTexto} FROM {tabla} ORDER BY {orden}", _cnDB);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            cbx.DataSource = dt;
+            cbx.DisplayMember = campoTexto;
+            cbx.ValueMember = campoValor;
         }
 
         //-----------------------------------------------------------------------------------------
