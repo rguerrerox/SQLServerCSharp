@@ -11,3 +11,6 @@ El código tiene comentarios para describir los bloques que realizan una tarea e
 
 La definición de la base de datos con la que trabaja el proyecto se encuentra en el archivo BDTEST.sql
 (SQL Server 2019)
+- Usuario de inicio de sesión SQL Server: usrdev
+- Contraseña para este usuario: usrDevPwd
+(Estos datos se pueden observar en la configuración del proyecto)
