@@ -13,4 +13,5 @@ La definición de la base de datos con la que trabaja el proyecto se encuentra e
 (SQL Server 2019)
 - Usuario de inicio de sesión SQL Server: usrdev
 - Contraseña para este usuario: usrDevPwd
-(Estos datos se pueden observar en la configuración del proyecto)
+
+(Estos datos de usuario de SQL server se pueden observar en la configuración del proyecto)
